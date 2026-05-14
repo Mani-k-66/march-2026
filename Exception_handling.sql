@@ -1,0 +1,200 @@
+-- declare
+--     a number:=10;
+--     b number:=0;
+--     c number;
+-- begin
+--     c:=a/b;
+--     dbms_output.put_line(c);
+-- exception
+--     when zero_divide then
+--         dbms_output.put_line('cannot divide by zero');
+-- end;
+-- /
+
+-- declare
+--     a number:=10;
+--     b number:=2;
+--     c number;
+-- begin
+--     c:=a/b;
+--     dbms_output.put_line(c);
+-- exception
+--     when zero_divide then
+--         dbms_output.put_line('cannot divide by zero');
+-- end;
+-- /
+
+-- declare
+--     a number:=10;
+--     b number:=2;
+--     c number(2);
+--     d number(2);
+-- begin
+--     c:=a/b;
+--     d:=9999;
+-- exception
+--     when zero_divide then
+--         dbms_output.put_line('cannot divide by zero');
+--     when value_error then
+--         dbms_output.put_line('value size exceeded');
+-- end;
+-- /
+
+-- declare
+--     v_balance NUMBER:=5000;
+--     v_withdraw NUMBER:=7000;
+--     insufficient_balance
+-- EXCEPTION;
+-- BEGIN
+--     if v_withdraw >v_balance
+-- THEN
+--     raise
+--     insufficient_balance;
+--     end if;
+--     v_balance :=v_balance-v_withdraw;
+-- DBMS_OUTPUT.PUT_LINE('Remaining balance:'||v_balance);
+-- EXCEPTION
+-- when
+-- insufficient_balance THEN
+-- DBMS_OUTPUT.PUT_LINE('Insufficient account balance');
+-- end;
+
+-- declare
+-- product details
+    -- product_id number:=101;
+    -- product_name VARCHAR2(20);
+
+-- Inventory details
+    -- available_stock number:=5;
+    -- requested_qty NUMBER:=10;
+
+-- Billing details
+    -- product_price NUMBER:=2500;
+    -- total_amount NUMBER;
+-- Coustomer details
+    -- coustomer_name VARCHAR2(5);
+-- Discount
+    -- Discount_percent number:=0;
+    -- final_amount number;
+
+-- BEGIN
+--     total_amount:=requested_qty*product_price;
+--     dbms_output.put_line(total_amount);
+-- end;
+-- /
+
+-- declare
+--     requested_qty number:=10;
+--     available_stock number:=5;
+--     stock_available exception;
+-- begin
+--     if requested_qty > available_stock
+--     THEN
+--         raise stock_available;
+--     end if;
+--     dbms_output.put_line(available_stock);
+-- exception
+--     when stock_available
+--     THEN
+--         dbms_output.put_line('requesred stock is not available');
+-- end;
+-- /    
+-- declare
+-- Coustomer_name VARCHAR2(10);
+-- begin 
+--     Coustomer_name:='nmkjhknredawuihuygbjnb';
+-- EXCEPTION
+-- when value_error THEN
+--     dbms_output.PUT_LINE('value size exceeded');
+-- end;
+-- /
+
+-- declare
+--     Discount_percent NUMBER:=10;
+--     total_amount NUMBER:=2000;
+--     discount_percentage number;
+-- begin
+--     Discount_percentage:= total_amount/Discount_percent;
+-- DBMS_OUTPUT.PUT_LINE(discount_percentage);
+-- EXCEPTION
+--     when zero_divide THEN
+--     dbms_output.PUT_LINE('connot divide by zero');
+-- end;
+-- /
+-- declare
+--     product_price number:=2500;
+--     total_amount NUMBER:=3000;
+--     final_bill number;
+-- BEGIN
+--     final_bill:=total_amount-product_price;
+--     DBMS_OUTPUT.PUT_LINE(final_bill);
+-- end;
+-- /
+
+-- DECLARE
+--     product_price number :=2000;
+--     Discount number:=0;
+--     total_amount NUMBER;
+-- begin
+--     total_amount:=product_price/Discount;
+--     dbms_output.put_line(total_amount);
+-- exception
+--     when zero_divide THEN
+--     dbms_output.put_line('concon divide by zero');
+-- end;
+-- /
+-- declare
+-- a number:=10;
+-- b number:=0;
+-- c number;
+-- BEGIN
+--     c:=a/b;
+--     DBMS_OUTPUT.PUT_LINE(c);
+-- EXCEPTION
+-- when zero_divide THEN
+-- DBMS_OUTPUT.PUT_LINE('cannot divide by zero');
+-- end;
+-- /
+
+-- DECLARE
+-- coustomer_name VARCHAR2(3);
+-- BEGIN
+--     coustomer_name:=('rggdsrdcf');
+--     DBMS_OUTPUT.put_line(coustomer_name);
+-- exception
+-- when value_error THEN
+-- DBMS_OUTPUT.PUT_LINE('value size exceeded');
+-- end;
+-- /
+
+-- DECLARE
+--     available_stock NUMBER := 5;
+--     requested_qty   NUMBER := 10;
+
+--     invalid_stock EXCEPTION;
+
+-- BEGIN
+--     IF requested_qty > available_stock THEN
+--         RAISE invalid_stock;
+--     END IF;
+
+--     DBMS_OUTPUT.PUT_LINE('Stock available');
+
+-- EXCEPTION
+--     WHEN invalid_stock THEN
+--         DBMS_OUTPUT.PUT_LINE('Invalid stock requested');
+-- END;
+/
+--  Generic exception handling
+
+-- declare
+-- product_price number :=100;
+-- Discount_percentage number :=0;
+-- total number;
+-- begin
+--     total:=product_price/Discount_percentage;
+-- exception
+-- when others then
+-- dbms_output.put_line('error:'|| sqlerrm);
+-- end;
+-- /
